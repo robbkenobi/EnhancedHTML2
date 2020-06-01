@@ -620,11 +620,11 @@ to help visually indicate that the section can be toggled.
                 if ($As -eq 'table') {
                     Write-Verbose "Adding $name to header and $value to row"
                     $headerrow += "<th>$name</th>"
-                    $datarow += "<td$(if ($cell_css -ne '') { ' class="'+$cell_css+'"' })>$value</td>"
+                    $datarow += "<td$(if ($cell_css -ne '') { ' class="'+$cell_css+'"' })>$($value.ToString())</td>"
                 } else {
                     $wrote_first_line = $true
                     $headerrow = ""
-                    $datarow = "<td$(if ($cell_css -ne '') { ' class="'+$cell_css+'"' })>$name :</td><td$(if ($cell_css -ne '') { ' class="'+$cell_css+'"' })>$value</td>"
+                    $datarow = "<td$(if ($cell_css -ne '') { ' class="'+$cell_css+'"' })>$name :</td><td$(if ($cell_css -ne '') { ' class="'+$cell_css+'"' })>$($value.ToString())</td>"
                     $out += "<tr$(if ($row_css -ne '') { ' class="'+$row_css+'"' })>$datarow</tr>"
                 }
             }
